@@ -1,0 +1,102 @@
+@import '~@fortawesome/fontawesome-free/css/all.css';
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+input[type="text"], input[type="password"] {
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+}
+select {
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+}
+input[type="submit"] {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+input[type="submit"]:hover {
+    background-color: #3e8e41;
+}
+h1 {
+    text-align: center;
+}
+.input-field-container {
+    position: relative;
+}
+  
+.input-field-container .eye-icon {
+position: absolute;
+top: 50%;
+right: 10px;
+transform: translateY(-50%);
+cursor: pointer;
+}
+
+/* .grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    margin: 20px;
+  }
+  
+  .grid-item {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .grid-item img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .grid-item img:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Style for clicked images */
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    margin: 20px;
+  }
+
+  .grid-item img:active {
+    transform: scale(0.9);
+    box-shadow: none;
+    border: 2px solid red;
+  } */
+  
+  .grid-item {
+    width: 33.33%;
+    height: 150px;
+    box-sizing: border-box;
+    padding: 10px;
+    border: 2px solid #fff;
+    cursor: pointer;
+  }
+  
+  .grid-item:hover {
+    border: 2px solid #aaa;
+  }
+  
+  .grid-item.selected {
+    border: 2px solid #00f;
+  }
+  

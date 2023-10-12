@@ -1,0 +1,29 @@
+<!-- <header>
+  <div class="brand">
+    <h1>Diabetes Tracking</h1>
+  </div>
+  <nav>
+    <ul class="nav-links">
+      <li *ngIf="postAuthenticationCompletion"><a routerLink="/home">Home</a></li>
+      <li *ngIf="!postUsernamePasswordSignIn"><a routerLink="/login">Login</a></li>
+      <li *ngIf="!postUsernamePasswordSignIn"><a routerLink="/register">Signup</a></li>
+      <li *ngIf="postAuthenticationCompletion"><a (click)="logout()">Logout</a></li>
+    </ul>
+  </nav>
+</header> -->
+
+<header>
+  <h1>Diabetes Tracking</h1>
+  <nav>
+    <a *ngIf="postAuthenticationCompletion" routerLink="/home">Home</a>
+    <a *ngIf="!postUsernamePasswordSignIn" routerLink="/login">Login</a>
+    <a *ngIf="!postUsernamePasswordSignIn" routerLink="/register">Signup</a>
+    <a *ngIf="postAuthenticationCompletion" (click)="logout()">Logout</a>
+  </nav>
+</header>
+
+<body class="body-background">
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
+</body>

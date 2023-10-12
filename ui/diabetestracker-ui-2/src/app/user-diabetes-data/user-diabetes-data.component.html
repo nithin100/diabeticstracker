@@ -1,0 +1,59 @@
+<div *ngIf="errorSeen" class="unable-to-save">
+    Unable to save the data! Please try again later
+</div>
+<form [formGroup]="bloodSugarForm" (ngSubmit)="saveData()">
+  <label>
+    Date:
+    <input type="date" formControlName="date">
+  </label>
+  <label>
+    Fasting/Blood Sugar Level:
+    <input type="number" formControlName="fastingBloodSugarLevel">
+  </label>
+  <label>
+    Fasting/Blood Sugar Time:
+    <input type="time" formControlName="fastingBloodSugarTime">
+  </label>
+  <h2>Breakfast</h2>
+  <div formGroupName="breakfast">
+    <label>
+      Time:
+      <input type="time" formControlName="time">
+    </label>
+    <label>
+      Food:
+      <input type="text" formControlName="food">
+    </label>
+  </div>
+  <h2>Lunch</h2>
+  <div formGroupName="lunch">
+    <label>
+      Time:
+      <input type="time" formControlName="time">
+    </label>
+    <label>
+      Food:
+      <input type="text" formControlName="food">
+    </label>
+  </div>
+  <h2>Dinner</h2>
+  <div formGroupName="dinner">
+    <label>
+      Time:
+      <input type="time" formControlName="time">
+    </label>
+    <label>
+      Food:
+      <input type="text" formControlName="food">
+    </label>
+  </div>
+  <label>
+    Post-Dinner Blood Sugar Level:
+    <input type="number" formControlName="postDinnerBloodSugarLevel">
+  </label>
+  <label>
+    Post-Dinner Blood Sugar Time:
+    <input type="time" formControlName="postDinnerBloodSugarTime">
+  </label>
+  <button class="save-btn" type="submit">Save</button>
+</form>

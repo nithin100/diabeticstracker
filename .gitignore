@@ -41,4 +41,6 @@ node/*
 /out-tsc
 
 # dependencies
-/node_modules
+ui/diabetestracker-ui-2/node_modules/*
+ui/diabetestracker-ui-2/dist/*
+ui/diabetestracker-ui-2/node/*

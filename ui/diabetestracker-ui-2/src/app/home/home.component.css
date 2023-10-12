@@ -1,0 +1,61 @@
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+table th,
+table td {
+  padding: 0.75rem;
+  text-align: center;
+  vertical-align: middle;
+  border: 1px solid #dee2e6;
+}
+
+table th {
+  font-weight: 600;
+  background-color: #f8f9fa;
+}
+
+table tbody tr:nth-of-type(even) {
+  background-color: #f8f9fa;
+}
+
+table tbody tr:hover {
+  background-color: #e2e6ea;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.diabetes-heading {
+  color: blue;
+  font-size: 24px;
+}
+
+.add-btn {
+  background-color: blue;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.plus-sign {
+  font-size: 28px;
+  margin-right: 8px;
+}
+
+.add-text {
+  display: inline-block;
+  vertical-align: middle;
+}

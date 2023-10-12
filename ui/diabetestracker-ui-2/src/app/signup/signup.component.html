@@ -1,0 +1,85 @@
+<h1>User Registration</h1>
+<form [formGroup]="registrationForm">
+
+  <label for="username">Full Name:</label>
+  <input type="text" id="fullname" formControlName="fullname" required>
+
+  <label for="username">Email:</label>
+  <input type="text" id="email" formControlName="email" required>
+
+  <label for="username">Username:</label>
+  <input type="text" id="username" formControlName="username" required>
+
+  <label for="username">Phonenumber:</label>
+  <input type="text" id="phonenumber" formControlName="phonenumber" required>
+
+  <label for="dateofbirth">Date:</label>
+  <input type="date" id="dateofbirth" formControlName="dateofbirth" required>
+
+
+  <!--Password-->
+  <div class="form-group">
+    <label for="password">Password:</label>
+    <div class="input-field-container">
+      <input type="{{ showPassword ? 'text' : 'password' }}" formControlName="password" class="form-control" (input)="calculatePasswordStrength()">
+      <fa-icon [icon]="showPassword ? iconLibrary.faEyeSlash : iconLibrary.faEye" class="eye-icon" (click)="toggleShowPassword()"></fa-icon>
+    </div>
+    <div class="progress">
+      <div class="progress-bar" role="progressbar" [ngStyle]="{ 'width': passwordStrength + '%' }" [attr.aria-valuenow]="passwordStrength"
+        aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+  </div>
+
+  <!--Confirm Password-->
+
+  <div class="form-group">
+    <label for="confirmPassword">Confirm Password:</label>
+    <div class="input-field-container">
+      <input type="{{ showConfirmPassword ? 'text' : 'password' }}" formControlName="confirmPassword" class="form-control">
+      <fa-icon [icon]="showConfirmPassword ? iconLibrary.faEyeSlash : iconLibrary.faEye" class="eye-icon" (click)="toggleShowConfirmPassword()"></fa-icon>
+    </div>
+  </div>
+
+
+  <label for="securityQuestion1">Security Question 1:</label>
+  <select id="securityQuestion1" formControlName="securityQuestion1" required>
+    <option value="">--Select a question--</option>
+    <option value="What is your favorite color?">What is your favorite color?</option>
+    <option value="What is your pet's name?">What is your pet's name?</option>
+    <option value="What is your mother's maiden name?">What is your mother's maiden name?</option>
+  </select>
+  <input type="text" id="securityAnswer1" formControlName="securityAnswer1" placeholder="Enter your answer here"
+    required>
+
+  <label for="securityQuestion2">Security Question 2:</label>
+  <select id="securityQuestion2" formControlName="securityQuestion2" required>
+    <option value="">--Select a question--</option>
+    <option value="What city were you born in?">What city were you born in?</option>
+    <option value="What was your high school mascot?">What was your high school mascot?</option>
+    <option value="What is your favorite movie?">What is your favorite movie?</option>
+  </select>
+  <input type="text" id="securityAnswer2" formControlName="securityAnswer2" placeholder="Enter your answer here"
+    required>
+
+  <!-- <div class="grid-container">
+    <div *ngFor="let row of gridRows" class="grid-row">
+      <div *ngFor="let image of images" class="grid-cell">
+        <img src="{{image}}" (click)="selectImage(image)">
+      </div>
+    </div>
+  </div> -->
+  <label for="imagePassword">Security Image:</label>
+
+  <div class="grid-container">
+    <div *ngFor="let image of images; let i = index" class="grid-item" [ngClass]="{'selected': selectedImageIndex === i}"
+      (click)="onImageClick(i)">
+      <img [src]="image.src" alt="{{ image.alt }}" />
+    </div>
+  </div>
+
+
+  <button type="submit" class="btn btn-primary" [disabled]="isSubmitting" (click)="registerUser()">
+    <span *ngIf="isSubmitting" class="spinner-border spinner-border-sm mr-2"></span>
+    Register
+  </button>
+</form>
